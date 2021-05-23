@@ -1,14 +1,8 @@
 ---
+contentKey: blog
 title: Creating A Kali Linux Bootable USB with Encrypted Persistence with MacOS
 date: 2021-05-23T20:44:27.957Z
-contentKey: blog
 ---
-# Creating A Kali Linux Bootable USB with Encrypted Persistence with MacOS
-
-![picture of Italy ](/img/20gorgeoussidetownsinitaly__hero_shutterstock_688078159.jpg)
-
-
-
 Creating a Kali Linux bootable USB with encrypted persistence was more complicated than I thought. I couldn't seem to find an up-to-date guide that uses only tools available to MacOS users, so I decided to create one in hopes it might help others looking to do the same thing. Almost all of the commands will require sudo, so I recommend just switching to root using sudo -s.
 
 ### Creating The Bootable USB
