@@ -1,9 +1,17 @@
 module.exports = {
   siteMetadata: {
     title: 'Mica\'s Website',
-    description: 'my blog/personal website/portfolio'
+    description: 'My personal website.'
   },
   plugins: [
-    'gatsby-plugin-netlify-cms'
+    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: 'src/blog'
+      }
+    },
+    'gatsby-transformer-remark'
   ]
 };
