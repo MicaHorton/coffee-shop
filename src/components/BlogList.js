@@ -1,33 +1,47 @@
-import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import BlogPost from './BlogPost';
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import BlogPost from './BlogPost'
+import { Link } from 'gatsby'
 
-export default function BlogList() {
-  const data = useStaticQuery(graphql`
-    {
-        allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC}) {
-            edges {
-                node {
-                    id
-                    frontmatter {
-                        title
-                        date(formatString: "MMMM D, YYYY")
+const BlogList = () => {
+    const data = useStaticQuery(graphql`
+        {
+            allMarkdownRemark(
+                sort: { fields: frontmatter___date, order: DESC }
+                limit: 3
+            ) {
+                edges {
+                    node {
+                        id
+                        frontmatter {
+                            title
+                            date(formatString: "MMMM D, YYYY")
+                        }
+                        fields {
+                            slug
+                        }
+                        excerpt
                     }
-                excerpt
                 }
             }
         }
-    }
-  `);
+    `)
     return (
         <div>
             {data.allMarkdownRemark.edges.map(edge => (
-            <BlogPost
-                key={edge.node.id}
-                title={edge.node.frontmatter.title}
-                date={edge.node.frontmatter.date}
-                excerpt={edge.node.excerpt} />
+                <BlogPost
+                    key={edge.node.id}
+                    slug={edge.node.fields.slug}
+                    title={edge.node.frontmatter.title}
+                    date={edge.node.frontmatter.date}
+                    excerpt={edge.node.excerpt}
+                />
             ))}
+            <div>
+                <Link to="/blog">More</Link>
+            </div>
         </div>
-    );
+    )
 }
+
+export default BlogList

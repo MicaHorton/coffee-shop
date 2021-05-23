@@ -1,6 +1,7 @@
 ---
 title: Creating A Kali Linux Bootable USB with Encrypted Persistence with MacOS
 date: 2021-05-23T20:44:27.957Z
+contentKey: blog
 ---
 # Creating A Kali Linux Bootable USB with Encrypted Persistence with MacOS
 
