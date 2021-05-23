@@ -4,37 +4,37 @@ backend:
 media_folder: static/img
 public_folder: /img
 collections:
-    - name: "blog"
-      label: "Blog"
-      folder: "src/blog"
+    - name: 'blog'
+      label: 'Blog'
+      folder: 'src/blog'
       create: true
-      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
       fields:
-          - name: "contentKey"
-            widget: "hidden"
-            default: "blog"
-          - label: "Title"
-            name: "title"
-            widget: "string"
-          - label: "Publish Date"
-            name: "date"
-            widget: "datetime"
-          - label: "Body"
-            name: "body"
-            widget: "markdown"
-    - name: "pages"
-    label: "Pages"
-    files:
-      - file: "src/pageData/index.md"
-        label: "Index Page"
-        name: "index-page"
-        fields:
-          - name: "contentKey"
-            widget: "hidden"
-            default: "indexPage"
-          - label: "Tagline"
-            name: "tagline"
-            widget: "string"
-          - label: "Hero Image"
-            name: "heroImage"
-            widget: "image"
+          - name: 'contentKey'
+            widget: 'hidden'
+            default: 'blog'
+          - label: 'Title'
+            name: 'title'
+            widget: 'string'
+          - label: 'Publish Date'
+            name: 'date'
+            widget: 'datetime'
+          - label: 'Body'
+            name: 'body'
+            widget: 'markdown'
+    - name: 'pages'
+      label: 'Pages'
+      files:
+          - file: 'src/pageData/index.md'
+            label: 'Index Page'
+            name: 'index-page'
+            fields:
+                - name: 'contentKey'
+                  widget: 'hidden'
+                  default: 'indexPage'
+                - label: 'Tagline'
+                  name: 'tagline'
+                  widget: 'string'
+                - label: 'Hero Image'
+                  name: 'heroImage'
+                  widget: 'image'
