@@ -1,11 +1,9 @@
 ---
-title: Raspberry Pi Torrent Box
-date: 2021-05-23T21:22:44.028Z
 contentKey: blog
+title: Raspberry Pi Torrent Box, Part 1
+date: 2021-05-23T21:22:44.028Z
 ---
-
-
-# Raspberry Pi Torrent Box
+# Raspberry Pi Torrent Box, Part 2
 
 This project all started from this [HowToGeek article](https://www.howtogeek.com/142044/how-to-turn-a-raspberry-pi-into-an-always-on-bittorrent-box/) on how to turn a Raspberry Pi into an always on torrent box. The advantages of torrenting using a Raspberry Pi are numerous:
 
@@ -35,7 +33,7 @@ This project all started from this [HowToGeek article](https://www.howtogeek.com
 
   ### The Manual Way
 
-  1) **Install the deluged daemon** on the Pi by entering the following into the terminal.
+  1. **Install the deluged daemon** on the Pi by entering the following into the terminal.
 
   ```
 
@@ -43,7 +41,7 @@ This project all started from this [HowToGeek article](https://www.howtogeek.com
 
   When you enter the deluged command, the deluged daemon should start. You won't get any output which means all is running smoothly and there are no errors.
 
-  2) **Give the dameon permissions** necessary to function by entering.
+  2. **Give the dameon permissions** necessary to function by entering.
 
   ```
 
@@ -57,7 +55,7 @@ This project all started from this [HowToGeek article](https://www.howtogeek.com
 
   to the bottom of the file. This specifies we want deluged to be able to run as "pi" and have level 10 access. Press Ctrl+X and Y to exit and save.
 
-  3) **Allow remote connection** in order to connect to the deluged-daemon from our main computer, To do this, restart the daemon and open the console.
+  3. **Allow remote connection** in order to connect to the deluged-daemon from our main computer, To do this, restart the daemon and open the console.
 
   ```
 
@@ -75,13 +73,13 @@ This project all started from this [HowToGeek article](https://www.howtogeek.com
 
   ```
 
-  4) (optional) **Install the web interface** which allows you to connect to the daemon through your browser.
+  4. (optional) **Install the web interface** which allows you to connect to the daemon through your browser.
 
   ```
 
   ```
 
-  5) Configure the daemon to start on boot. Enter
+  5. Configure the daemon to start on boot. Enter
 
   ```
 
