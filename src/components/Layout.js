@@ -1,20 +1,15 @@
-import React from 'react';
-import styles from './Layout.module.css';
-import { Link } from 'gatsby';
+import React from 'react'
+import styles from './Layout.module.css'
+import { Link } from 'gatsby'
+import Navbar from './Navbar'
 
 const Layout = ({ children }) => {
     return (
         <div>
-            <header id={styles.header}>
-                <div id={styles.inner}>
-                    <h1><Link to='/'>Mica's Coffee Shop</Link></h1>
-                </div>
-            </header>
-            <main id={styles.main}>
-                {children}
-            </main>
+            <Navbar />
+            <main id={styles.main}>{children}</main>
         </div>
-    );
+    )
 }
 
-export default Layout;
+export default Layout
