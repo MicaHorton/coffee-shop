@@ -1,14 +1,46 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
-import Menu from '../styles/Menu'
+import { Menu, MenuItem, MenuIndicator } from '../styles/Menu'
 
 const Navbar = () => {
+    const url = window.location.pathname
+    const [active, setActive] = useState([false, false, false, false])
+
+    useEffect(() => {
+        switch (url) {
+            case '/':
+                setActive([true, false, false, false])
+                break
+            case '/projects':
+                setActive([false, true, false, false])
+                break
+            case '/blog':
+                setActive([false, false, true, false])
+                break
+            case '/contact':
+                setActive([false, false, false, true])
+                break
+            default:
+                break
+        }
+    }, [url, setActive])
+
     return (
         <Menu>
-            <Link to="/">About</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/contact">Contact</Link>
+            <MenuItem color="orange" active={+active[0]}>
+                <Link to="/">About</Link>
+            </MenuItem>
+            <MenuItem color="green" active={+active[1]}>
+                <Link to="/projects">Projects</Link>
+            </MenuItem>
+            <MenuItem color="red" active={+active[2]}>
+                <Link to="/blog">Blog</Link>
+            </MenuItem>
+            <MenuItem color="purple" active={+active[3]}>
+                <Link to="/contact">Contact</Link>
+            </MenuItem>
+
+            <MenuIndicator />
         </Menu>
     )
 }

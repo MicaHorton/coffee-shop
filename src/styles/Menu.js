@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
-const Menu = styled.nav`
+export const Menu = styled.nav`
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
@@ -16,16 +16,50 @@ const Menu = styled.nav`
     box-shadow: 0 10px 40px rgba(159, 162, 177, 0.8);
 
     a {
-        color: #83818c;
-        padding: 20px;
         text-decoration: none;
-        transition: 0.3s;
-
-        z-index: 1;
-        font-family: 'DM Sans', sans-serif;
-        font-weight: 500;
-        position: relative;
-        font-size: 18px;
+        color: #83818c;
     }
 `
-export default Menu
+
+export const MenuItem = styled.span`
+    padding: 20px;
+    position: relative;
+    font-size: 18px;
+
+    :before {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: #dfe2ea;
+        border-radius: 8px 8px 0 0;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    ${props =>
+        props.active &&
+        css`
+            a {
+                color: ${props => props.color};
+            }
+
+            :before {
+                opacity: 1;
+                bottom: 0;
+                background-color: ${props => props.color};
+            }
+        `}
+`
+
+export const MenuIndicator = styled.span`
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.4s;
+    height: 5px;
+    z-index: 1;
+    border-radius: 8px 8px 0 0;
+`
