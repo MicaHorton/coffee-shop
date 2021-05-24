@@ -6,6 +6,7 @@ const Menu = styled.nav`
     justify-content: center;
     width: 90vw;
     max-width: 430px;
+    margin-top: 10px;
 
     position: relative;
     overflow: hidden;

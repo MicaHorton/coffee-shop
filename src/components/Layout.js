@@ -1,14 +1,13 @@
 import React from 'react'
-import styles from './Layout.module.css'
-import { Link } from 'gatsby'
 import Navbar from './Navbar'
+import Container from '../styles/Container'
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <Container>
             <Navbar />
-            <main id={styles.main}>{children}</main>
-        </div>
+            <main>{children}</main>
+        </Container>
     )
 }
 

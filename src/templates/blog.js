@@ -1,18 +1,19 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Card from '../styles/Card'
 
 export default function BlogTemplate({ data }) {
     return (
         <Layout>
-            <div>
+            <Card>
                 <h1>{data.markdownRemark.frontmatter.title}</h1>
                 <div
                     dangerouslySetInnerHTML={{
-                        __html: data.markdownRemark.html,
+                        __html: data.markdownRemark.html
                     }}
                 />
-            </div>
+            </Card>
         </Layout>
     )
 }

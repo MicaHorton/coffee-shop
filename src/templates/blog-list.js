@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import BlogPost from '../components/BlogPost'
 import Layout from '../components/Layout'
-import styles from './blog-list.module.css'
 
 export default function BlogListTemplate({ data, pageContext }) {
     // Generate the previous and next page URLs.
@@ -14,10 +13,7 @@ export default function BlogListTemplate({ data, pageContext }) {
     const nextPage = `/blog/${pageContext.currentPage + 1}`
     return (
         <Layout>
-            <div id={styles.hero}>
-                <h1>The Coffee Blog</h1>
-            </div>
-            <main className={styles.blogList}>
+            <main>
                 {data.allMarkdownRemark.edges.map(node => (
                     <BlogPost
                         key={node.node.id}
@@ -28,7 +24,7 @@ export default function BlogListTemplate({ data, pageContext }) {
                     />
                 ))}
             </main>
-            <div id={styles.pageLinks}>
+            <div>
                 {pageContext.currentPage > 1 && (
                     <Link to={previousPage}>Previous Page</Link>
                 )}
