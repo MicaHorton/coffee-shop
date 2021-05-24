@@ -7,6 +7,8 @@ const Navbar = () => {
 
     if (typeof window !== `undefined`) {
         const url = window.location.pathname
+    } else {
+        const url = null
     }
 
     useEffect(() => {
