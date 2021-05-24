@@ -7,11 +7,14 @@ const Navbar = () => {
 
     if (typeof window !== `undefined`) {
         const url = window.location.pathname
+        console.log('hello')
     } else {
+        console.log('bye')
         const url = 'in build process'
     }
 
     useEffect(() => {
+        console.log('url is', url)
         switch (url) {
             case '/':
                 setActive([true, false, false, false])
