@@ -3,8 +3,11 @@ import { Link } from 'gatsby'
 import { Menu, MenuItem, MenuIndicator } from '../styles/Menu'
 
 const Navbar = () => {
-    const url = window.location.pathname
     const [active, setActive] = useState([false, false, false, false])
+
+    if (typeof window !== `undefined`) {
+        const url = window.location.pathname
+    }
 
     useEffect(() => {
         switch (url) {
